@@ -25,18 +25,18 @@ export default function Search({
   dollarRate: string;
   poundRate: string;
 }) {
-  const { currency, isSearchOpen, setIsSearchOpen } = useRootContext();
-  const [input, setInput] = useState("");
-  const [selectedOption, setSelectedOption] = useState<Category>("all");
+  // const { currency, isSearchOpen, setIsSearchOpen } = useRootContext();
+  // const [input, setInput] = useState("");
+  // const [selectedOption, setSelectedOption] = useState<Category>("all");
 
   return (
     <div
       style={{ transition: "right 0.2s ease" }}
-      className={`fixed h-full top-0 bg-white w-80 sm:w-88 z-40 flex flex-col ${
-        isSearchOpen ? "right-0" : "-right-80 sm:-right-88"
-      }`}
+      // className={`fixed h-full top-0 bg-white w-80 sm:w-88 z-40 flex flex-col ${
+      //   isSearchOpen ? "right-0" : "-right-80 sm:-right-88"
+      // }`}
     >
-      <header className="border-b-1 border-gray-200 h-14 flex flex-row items-center justify-between">
+      {/* <header className="border-b-1 border-gray-200 h-14 flex flex-row items-center justify-between">
         <h3 className={`${libre_caslon_text.className} pl-4`}>
           SEARCH OUR SITE
         </h3>
@@ -141,7 +141,7 @@ export default function Search({
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

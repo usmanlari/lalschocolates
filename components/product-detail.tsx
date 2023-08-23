@@ -18,15 +18,15 @@ export default function ProductDetail({
   dollarRate: string;
   poundRate: string;
 }) {
-  const { currency } = useRootContext();
-  const [isGreetingCardDropdownOpen, setIsGreetingCardDropdownOpen] =
-    useState<boolean>(false);
-  const [isDisclaimerDropdownOpen, setIsDisclaimerDropdownOpen] =
-    useState<boolean>(false);
+  // const { currency } = useRootContext();
+  // const [isGreetingCardDropdownOpen, setIsGreetingCardDropdownOpen] =
+  //   useState<boolean>(false);
+  // const [isDisclaimerDropdownOpen, setIsDisclaimerDropdownOpen] =
+  //   useState<boolean>(false);
 
   return (
     <div className="px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 sm:mt-12 lg:mt-14">
-      <div className="flex-1">
+      {/* <div className="flex-1">
         <Image
           src={imageMapping[product.reference as keyof typeof imageMapping]}
           alt=""
@@ -110,7 +110,7 @@ export default function ProductDetail({
             your continued support.
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -22,27 +22,27 @@ export default function Footer() {
       return;
     }
 
-    try {
-      const apiUrlSubscribers = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/subscribers`;
+    // try {
+    //   const apiUrlSubscribers = process.env.NEXT_PUBLIC_API_SUBSCRIBERS;
 
-      const res = await fetch(apiUrlSubscribers as string, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+    //   const res = await fetch(apiUrlSubscribers as string, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ email }),
+    //   });
 
-      if ([201, 409, 422].includes(res.status)) {
-        const { message } = await res.json();
-        setMessage(message);
-        setEmail("");
-        return;
-      }
-    } catch (error) {
-      console.log(error);
-      return;
-    }
+    //   if ([201, 409, 422].includes(res.status)) {
+    //     const { message } = await res.json();
+    //     setMessage(message);
+    //     setEmail("");
+    //     return;
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   return;
+    // }
   };
 
   return (
