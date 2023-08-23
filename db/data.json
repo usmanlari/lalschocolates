@@ -1,0 +1,544 @@
+{
+  "products": [
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7e9d"
+      },
+      "title": "Roasted Almonds & Sea Salt in Dark Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Indulgent dark chocolate meets classic crunchy almonds with a sea-salty twist. It comes in an easy-to-snack resealable packaging so you can munch on these anytime & anywhere! Satisfy your chocolate cravings and snack healthy.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "roasted-almonds-and-sea-salt-in-dark-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce3a451ac5c3c5177e79c8"
+      },
+      "title": "Raw Organic Dark 70%",
+      "price": 1060,
+      "description": "It's called dark chocolate but it can brighten anyone's day. Subtle fruity tones balance the rich cocoa profile of this organic chocolate. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "raw-organic-dark-70"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7e9e"
+      },
+      "title": "Nougat in Milk Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Smooth chocolate pieces with chewy nougat makes a chocolate snack you can't resist. Our chocolate bark made with real ingredients with resealable packaging makes a delicious snack that you can munch on anywhere and anytime. It's chocolate snacking redefined.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "nougat-in-milk-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7e9c"
+      },
+      "title": "Cranberries, Nuts & Marzipan Hearts Dark Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "A limited edition dark chocolate bark mixed with cranberries, nuts and marzipan hearts. Whether you're buying it for yourself as a snack or giving it as a gift; our decadent chocolate bark is a must-try.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "cranberries-nuts-and-marzipan-hearts-dark-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4eb01ac5c3c517908043"
+      },
+      "title": "Marble Chocolate Platter KHI & LHR Only",
+      "price": 18150,
+      "description": "A marble tray filled with 65-70 pieces of delicious Lals classic chocolates is the perfect sweet treat for celebrations. Handmade with love, each piece is unique and made to spread joy and happiness during this special occasion. Our platters are priced according to the number of chocolates, making it an affordable and thoughtful gift. Please note that the platter may be slightly different depending on availability, but the taste and quality of our chocolates will always be exceptional. Surprise your loved ones with this special gift, and make their celebrations even more delightful.",
+      "categories": ["all", "chocolates", "chocolate-platters"],
+      "reference": "marble-chocolate-platter-khi-and-lhr-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c90"
+      },
+      "title": "Assorted French Macarons (Box of 8)",
+      "price": 1610,
+      "description": "Handmade by our Chocolatier Lal Majid, our French Macarons are available in a wide variety of unique flavors and fillings.",
+      "categories": ["all", "patisserie", "macarons"],
+      "reference": "assorted-french-macarons-box-of-8"
+    },
+    {
+      "_id": {
+        "$oid": "64ce46ac1ac5c3c517891140"
+      },
+      "title": "Pure Dark 56%",
+      "price": 960,
+      "description": "This chocolate bar is made from our distinctive couverture &amp; is perfectly balanced with a fresh fruity note &amp; a slightly roasted cocoa taste. Unwrap a bar, break off a piece, savor and repeat. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "pure-dark-56"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c94"
+      },
+      "title": "Chocolate Biscotti",
+      "price": 750,
+      "description": "Chocolate and almond is the perfect combination. Our chocolate biscotti is a great treat for your tea or coffee break. They come in a jar of 120 grams.",
+      "categories": ["all", "free-delivery", "patisserie", "snackables"],
+      "reference": "chocolate-biscotti-120"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7ea0"
+      },
+      "title": "Nougat in Dark Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Decadent dark chocolate with chewy nougat to elevate your snacking game. Our chocolate bark made with real ingredients with resealable packaging makes a delicious chocolate snack that you can munch on anywhere and anytime.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "nougat-in-dark-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce46ac1ac5c3c51789113d"
+      },
+      "title": "Smooth Milk 36%",
+      "price": 960,
+      "description": "This milk chocolate is made from our unique couverture. It has a deep warm color, smooth cocoa body & light honey notes to top it off. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "smooth-milk-36"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7e9f"
+      },
+      "title": "Biscuits, Fudge and Marshmallows in Milk Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Innovation meets delicious in this unique combination of biscuits, fudge and marshmallows in smooth milk chocolate. It comes in an easy-to-snack resealable packaging so you can have it anytime & anywhere.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "biscuits-fudge-and-marshmallows-in-milk-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce46ac1ac5c3c51789113c"
+      },
+      "title": "Almond Milk 56%",
+      "price": 1060,
+      "description": "It's milk chocolate, but with crunchy almonds. That's it. It is sweetened with maltitol instead of sugar making it safer for diabetics. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "almond-milk-56"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c8f"
+      },
+      "title": "Assorted French Macarons (Box of 4)",
+      "price": 810,
+      "description": "Handmade by our Chocolatier Lal Majid, our French Macarons are available in a wide variety of unique flavors and fillings.",
+      "categories": ["all", "patisserie", "macarons"],
+      "reference": "assorted-french-macarons-box-of-4"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7e9b"
+      },
+      "title": "Roasted Hazelnut in Milk Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Smooth snackable chunks of milk chocolate with roasted hazelnuts. It comes in an easy-to-snack resealable packaging so you can munch on these anytime & anywhere! It's chocolate snacking with a twist.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "roasted-hazelnut-in-milk-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4eb01ac5c3c517908041"
+      },
+      "title": "Festive Chocolate Tray - KHI & LHR ONLY",
+      "price": 28000,
+      "description": "The grand chocolate wooden tray filled with 105-110 pieces of original classic chocolates is a perfect and affordable gift for Eid. Handmade with love, each piece is unique, making it a thoughtful and shareable present that will bring joy and happiness to the receiver. Add a greeting card on the checkout page with a customized message for added personalization.",
+      "categories": ["all", "chocolates", "chocolate-platters"],
+      "reference": "festive-chocolate-tray-khi-and-lhr-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce55dd1ac5c3c51796b16e"
+      },
+      "title": "Cappuccino Cake - KHI ONLY",
+      "price": 3500,
+      "description": "A cake for all coffee lovers out there! It's a delicate cake with intense coffee-flavored frosting as if you've had a cappuccino. Gift this to a coffee lover and they'd always remember you. This cake is 2.7 pounds.",
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "cappuccino-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce55dd1ac5c3c51796b16c"
+      },
+      "title": "Classic Chocolate Cake - KHI ONLY",
+      "price": 2700,
+      "description": "Tastes as good as it looks. It's a classic moist chocolate cake layered with rich and silky chocolate buttercream. This cake is 2.3 pounds.",
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "classic-chocolate-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4eb01ac5c3c517908044"
+      },
+      "title": "Glass Chocolate Platter",
+      "price": 17000,
+      "description": "A glass tray full of delicious Lals classic chocolates; perfect for gifting and sharing with your friends and family. Each platter is handmade with utmost love hence each piece is unique. Our platters are priced according to the number of chocolates. This platter contains 75-80 pieces of chocolate. The platter may be slightly different depending on availability.",
+      "categories": ["all", "chocolates", "chocolate-platters"],
+      "reference": "glass-chocolate-platter"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c92"
+      },
+      "title": "Honey Roasted Almonds (150 gms)",
+      "price": 750,
+      "description": "Indulge in our delicious Honey Roasted Almonds, packaged in a convenient 150g jar. Our almonds are roasted to perfection and coated in a layer of sweet honey, resulting in a satisfyingly crunchy snack. Sourced from the finest farms and packed with nutrients, our almonds are perfect for anyone looking for a healthy and delicious snack especially to keep you energized through your fast.",
+      "categories": ["all", "patisserie", "snackables"],
+      "reference": "honey-roasted-almonds-150"
+    },
+    {
+      "_id": {
+        "$oid": "64ce55dd1ac5c3c51796b16d"
+      },
+      "title": "Caramel Crunch Cake - KHI ONLY",
+      "price": 2600,
+      "description": "A light and delicious layer cake made with toffee caramel, almonds and whipped cream. This cake is 2 pounds.",
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "caramel-crunch-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce55dd1ac5c3c51796b16b"
+      },
+      "title": "Tiramisu Cake - KHI ONLY",
+      "price": 3600,
+      "description": "Our Tiramisu Cake is moist and rich in flavor, it has soft cake layers soaked in espresso, giving off an intense flavor of coffee filled with whipped mascarpone cream frosting. A true delight for all celebrations and occasions. This cake is 2.3 pounds.",
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "tiramisu-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4eb01ac5c3c517908045"
+      },
+      "title": "Chocolate Gold Platter",
+      "price": 19900,
+      "description": "An acrylic gold tray with a beautiful handle made out of jute, full of fresh and delicious Lals classic chocolates; is perfect for gifting and sharing with your friends and family. Each platter is handmade with utmost love hence each piece is unique. Our platters are priced according to the number of chocolates. This platter contains 90 pieces of chocolate. The platter may be slightly different depending on availability.",
+      "categories": ["all", "chocolates", "chocolate-platters"],
+      "reference": "chocolate-gold-platter"
+    },
+    {
+      "_id": {
+        "$oid": "64ce46ac1ac5c3c51789113e"
+      },
+      "title": "Pink Salt Dark 56%",
+      "price": 960,
+      "description": "This chocolate bar is expertly crafted using our distinctive couverture, combined with Himalayan pink salt to draw out the flavor. Unwrap a bar, break off a piece, savor and repeat. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "pink-salt-dark-56"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c93"
+      },
+      "title": "Chocolate Coated Almonds",
+      "price": 1400,
+      "description": "Snack healthy with our roasted almonds covered in intense dark chocolate & sprinkled with cocoa. High in protein & fiber, it comes in a jar which makes this a perfect travel snack for adults & children on the way to the office, school, or just on the go. One jar contains 150 grams of chocolate-coated almonds.",
+      "categories": ["all", "free-delivery", "patisserie", "snackables"],
+      "reference": "chocolate-coated-almonds-150"
+    },
+    {
+      "_id": {
+        "$oid": "64ce46ac1ac5c3c51789113f"
+      },
+      "title": "Orange Dark 56%",
+      "price": 960,
+      "description": "Enhanced with luscious orange extract, this dark chocolate bar blends citrus notes with distinct with our distinct dark chocolate to make a winning flavor combination. Handcrafted in Karachi, Pakistan. This is a better-for-you bar that is made with cocoa butter & natural vanilla. It comes in an easy-to-snap bar format in a box you can close for better portion control & sharing.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-bars"],
+      "reference": "orange-dark-56"
+    },
+    {
+      "_id": {
+        "$oid": "64ce4b7d1ac5c3c5178d7ea1"
+      },
+      "title": "Raisins, Pistachios and Almonds in Dark Chocolate Bark Pouch",
+      "price": 1510,
+      "description": "Go nutty with our intense dark chocolate bark filled with raisins, pistachios and almonds. It comes in an easy-to-snack resealable packaging so you can munch on these anytime & anywhere! Satisfy your chocolate cravings and snack healthy.",
+      "categories": ["all", "free-delivery", "chocolates", "chocolate-barks"],
+      "reference": "raisins-pistachios-and-almonds-in-dark-chocolate-bark-pouch"
+    },
+    {
+      "_id": {
+        "$oid": "64ce545c1ac5c3c517955c91"
+      },
+      "title": "Rewari Jar (150 gms)",
+      "price": 650,
+      "description": "A new twist to a favourite local snack! Lals has taken the traditional sesame Rewari and dipped it in our dark chocolate to create a delicious mix of Chocolate Coated and sesame Rewari jar (150 gms). Rewari is a traditional sub-continent sweet snack made up of sesame seeds, nuts, and Jaggery. This mouthwatering rewari combo results in a satisfyingly crunchy and delicious snack that you just can't stop munching on.",
+      "categories": ["all", "patisserie", "snackables"],
+      "reference": "rewari-jar-150"
+    },
+    {
+      "_id": {
+        "$oid": "64e1e42cef511e353e1ae8a5"
+      },
+      "title": "Rasmalai Bar",
+      "price": 1000,
+      "description": "An ode to our rich heritage & a very popular Pakistani dessert. This creamy white chocolate bar is made from a house-made cardamom-infused couverture with a sprinkling of almonds and pistachios. Handcrafted in Pakistan with locally grown Cardamom, it comes in an easy-to-snap bar format, in a box you can close for better portion control and sharing. Each bar is 80 grams in weight.",
+      "categories": ["all", "chocolates", "chocolate-bars"],
+      "reference": "rasmalai-bar"
+    },
+    {
+      "_id": {
+        "$oid": "64e1ef36ef511e353e244fe4"
+      },
+      "title": "Chocolate Digestives",
+      "price": 1350,
+      "description": "Sweet and crumbly digestive biscuits topped with thick Lals signature milk or dark chocolate. They're perfect for teatime or as an after-school treat. One pack contains 9 milk and dark chocolate digestives.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "chocolate-digestives"
+    },
+    {
+      "_id": {
+        "$oid": "64e1efd4ef511e353e24d0cc"
+      },
+      "title": "Chocolate Chip Pancake Mix",
+      "price": 600,
+      "description": "Make pancakes like Lal Aunty at the convenience of your home with our pancake mix. Easy-to-follow directions and delicious taste guaranteed! The jar makes up to 5 pancakes.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "chocolate-chip-pancake-mix"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f057ef511e353e253bf5"
+      },
+      "title": "Peanut Brittle",
+      "description": "Crunchy, chunky, and nutty peanut brittle covered in Barry Callebaut dark chocolate makes a great on-the-go snack! They come in a pouch of 150 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 1000,
+      "reference": "peanut-brittle"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f0aaef511e353e258b59"
+      },
+      "title": "Honey Roasted Granola",
+      "description": "Looking for a healthy breakfast or snack option? We've got you covered with our honey-roasted granola handmade by Lal Aunty to add the perfect crunch to your breakfast or snacking. It comes in a pouch of 120 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 800,
+      "reference": "honey-roasted-granola"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f123ef511e353e25ec83"
+      },
+      "title": "Chocolate Butter Crunch",
+      "description": "A toothsome delicacy made with silky smooth dark chocolate, caramel, and nuts! It's chunky, crunchy, and highly addictive, especially in the winter season - it becomes the perfect comforting treat to snack upon. It comes in a pouch of 150 grams.",
+      "price": 760,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "chocolate-butter-crunch"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f1a6ef511e353e2654c1"
+      },
+      "title": "Checkerboard Cookies",
+      "description": "Deliciously crisp and light chequered shortbread biscuits handmade with love for your tea time. It comes in a pouch of 150 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 430,
+      "reference": "checkerboard-cookies"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f1ebef511e353e268c9e"
+      },
+      "title": "Sugar Free Cookies",
+      "description": "Sugar-free shortbread cookies are perfect for tea time! They're an ideal treat for health-conscious people and people with diabetes to enjoy guilt-free. It comes in a pouch of 150 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 400,
+      "reference": "sugar-free-cookies"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f233ef511e353e26c80d"
+      },
+      "title": "Savoury Puffs",
+      "description": "Delicious salty savory puffs that can be enjoyed as a tea-time snack anywhere, anytime. It comes in a pouch of 100 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 450,
+      "reference": "savoury-puffs"
+    },
+    {
+      "_id": {
+        "$oid": "64e1f2b0ef511e353e27379d"
+      },
+      "title": "Trail Mix",
+      "description": "Our take on this incredibly popular snack! It's flavorful, filling, and easy to carry around. This trail mix contains almonds, pistachio, coconut, sunflower seeds, cashews, walnuts, pumpkin seeds, peanuts, and freeze-dried strawberries making it a perfect on-the-go snack. It comes in a pouch of 75 grams.",
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "price": 700,
+      "reference": "trail-mix"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fe27ef511e353e3077fd"
+      },
+      "title": "Rosette Meringues",
+      "description": "Deliciously light, colorful, and airy meringues are perfect to satisfy your sweet tooth! They come in a jar of 40 grams.",
+      "price": 500,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "rosette-meringues"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fe27ef511e353e3077fe"
+      },
+      "title": "Strawberry Jam",
+      "description": "Our chunky and delicious strawberry jam has no preservatives. It's handmade by Lal Aunty using only pure real ingredients. It comes in a jar of 150 grams.",
+      "price": 1000,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "strawberry-jam"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fe27ef511e353e3077ff"
+      },
+      "title": "Butter Cookies",
+      "description": "A scrumptious pack of delightful butter cookies that can be paired up with tea or coffee. They come in a pouch of 150 grams.",
+      "price": 400,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "butter-cookies"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fe27ef511e353e307800"
+      },
+      "title": "Chocolate Almond Spread",
+      "description": "Smooth, silky, and chocolatey almond chocolate spread handmade by our chocolatier Lal Majid that you can spread on your toast for breakfast or tea time snack. It comes in a jar of 120 grams.",
+      "price": 1100,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "chocolate-almond-spread"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fe27ef511e353e307801"
+      },
+      "title": "Traditional Biscuits",
+      "description": "Our signature buttery and crisp biscuits are handmade by Lal Majid to perfection. They come in a box of 150 grams.",
+      "price": 650,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "traditional-biscuits"
+    },
+    {
+      "_id": {
+        "$oid": "64e1fecbef511e353e310525"
+      },
+      "title": "Almond Biscotti",
+      "description": "Perfect crisp savory treat packed with almonds to make your tea time special. They come in a jar of 100 grams.",
+      "price": 650,
+      "categories": ["all", "patisserie", "snackables", "free-delivery"],
+      "reference": "almond-biscotti"
+    },
+    {
+      "_id": {
+        "$oid": "64e20265ef511e353e33e820"
+      },
+      "title": "Barbie Cake - KHI ONLY",
+      "description": "Get ready for Barbie magic! Spoil yourself or your dear ones with our limited edition Barbie Cake. This beautiful red velvet heart cake, covered in creamy buttercream frosting and brimming with rich red velvet flavor, is a dream come true for any Barbie fan. This Barbie Cake is 2.5 pounds.",
+      "price": 3600,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "barbie-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e202b3ef511e353e342302"
+      },
+      "title": "Mango Sponge Cake",
+      "description": "Soft, moist, and fluffy sponge cake layered with fresh mango cubes and lightly sweetened homemade whipped cream and frosted with more whipped cream. It's  perfect for any occasion and it's a cake everyone will enjoy eating because of its light texture and taste (especially after a hearty meal).",
+      "price": 2700,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "mango-sponge-cake"
+    },
+    {
+      "_id": {
+        "$oid": "64e202faef511e353e345c81"
+      },
+      "title": "Festive Dark Chocolate Cake - KHI ONLY",
+      "description": "Celebrate any occasion with this gorgeous cake! It's a moist dark chocolate cake frosted and finely decorated with rich creamy buttercream frosting. To make this cake even more special, we have elegantly decorated with piped swirls and rosettes of buttercream frosting and edible decorations. It's the perfect additional to any celebration, it is also perfect to gift it to someone you love, the guests or receiver will be impressed.",
+      "price": 2600,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "festive-dark-chocolate-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20381ef511e353e34d3b1"
+      },
+      "title": "Red Velvet Heart Cake - KHI ONLY",
+      "description": "From the first glance till the last bite, you'd love this cake! Surprise your loved ones with a heart-shaped red velvet cake - it's a moist red velvet sponge covered with cream cheese frosting all over. This cake is 2.5 pounds.",
+      "price": 3300,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "red-velvet-heart-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e206a8ef511e353e375370"
+      },
+      "title": "Carrot Cake - KHI ONLY",
+      "description": "Try it once and you'd forget the rest! Our carrot cake is flawless, it's made with lots of fresh carrots and topped with creamy cheese frosting. Sounds delightful, right? This cake is 2.9 pounds.",
+      "price": 6000,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "carrot-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20741ef511e353e37cd85"
+      },
+      "title": "Triple-Layer Chocolate Cake - KHI ONLY",
+      "description": "A cake made with three types of premium chocolate is the ultimate treat for a chocoholic, there’s dark, milk, and white chocolate in layers of the cake. Are you already drooling while reading? Order now and indulge yourself in deliciousness! This cake is 3.1 pounds.",
+      "price": 4600,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "triple-layer-chocolate-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20a72ef511e353e3a6600"
+      },
+      "title": "Blueberry Cheesecake - KHI ONLY",
+      "description": "Perfectly baked creamy cheesecake topped with fresh blueberries, house-made blueberry sauce with a buttery biscuit base. It will have everyone going for seconds! and is perfect for all your winter soirees. This cake is 3 pounds.",
+      "price": 6500,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "blueberry-cheesecake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20b09ef511e353e3ae153"
+      },
+      "title": "Lemon Cake - KHI ONLY",
+      "description": "Delicious till the last piece - this lemon cake has a moist sponge with a lemony buttercream frosting. The punch of citrus is an absolute game-changer for all citrus fans out there. This cake is 2 pounds.",
+      "price": 2500,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "lemon-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20b5aef511e353e3b2036"
+      },
+      "title": "Toffee Almond Cake (Gluten Free) - KHI ONLY",
+      "description": "Are you or someone you know allergic to gluten? Don't worry, we got you! This almond toffee cake features fluffy vanilla layers, toffee crunch filling, and a nutty chocolate frosting. No occasion is ever complete without a cake!",
+      "price": 3000,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "toffee-almond-cake-gluten-free-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20bd1ef511e353e3b7ffe"
+      },
+      "title": "Floral Layered Cake - KHI ONLY",
+      "description": "Floral layered cakes are all the rage! Our layered cake topped with edible flowers has a biscuit base with fresh cream piped in the layers. It's as delicious as it looks and something your loved ones will truly enjoy. Gift it to them along with a heartfelt message on a complimentary greeting card and make them smile! This cake 1.6 pounds.",
+      "price": 3000,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "floral-layered-cake-khi-only"
+    },
+    {
+      "_id": {
+        "$oid": "64e20c48ef511e353e3bdf4b"
+      },
+      "title": "New York Cheesecake - KHI ONLY",
+      "description": "What a heavenly delight! This classic New York cheesecake is decadently rich and creamy in taste with a thin layer of buttery crust. This cake is 2.8 pounds.",
+      "price": 5500,
+      "categories": ["all", "patisserie", "cakes"],
+      "reference": "new-york-cheesecake-khi-only"
+    }
+  ]
+}

@@ -2,26 +2,188 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.hover-link {
+  transition: color 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.required::after {
+  content: " *";
+  color: red;
+}
+
+@keyframes animateContainer {
+  from {
+    transform: translateX(260%);
+  }
+  to {
+    transform: translateX(-130%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.animate-container {
+  animation: animateContainer 16s linear infinite;
+}
+
+.dropdown > div {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8%);
+  transition: transform 0.4s ease, visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.dropdown-open > div {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-backdrop {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 30;
+}
+
+.plus {
+  opacity: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.plus-rotate {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.minus {
+  transform: rotate(-180deg);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.minus-rotate {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.close {
+  transition: transform 0.3s ease;
+}
+
+.close:hover {
+  transform: rotate(180deg);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevron-rotate {
+  transform: rotate(-180deg);
+}
+
+.sort-dropdown {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, opacity 0.1s ease, visibility 0.1s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.sort-dropdown-open {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+select {
+  appearance: none;
+}
+
+.price {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: ew-resize;
+  outline: none;
+  height: 2px;
+  background: black;
+}
+
+.price::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 5px;
+  background-color: black;
+  border: none;
+}
+
+.price::-moz-range-thumb {
+  height: 16px;
+  width: 5px;
+  background-color: black;
+  border: none;
+}
+
+.product-catalog-image {
+  transition: transform 0.5s ease;
+}
+
+.product-catalog-image:hover {
+  transform: scale(1.1);
+}
+
+.product-catalog-description {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.social-link > svg {
+  transform: translateY(0);
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover > svg {
+  transform: translateY(-20%);
+}
+
+.social-link > div {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.4s ease, visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link:hover > div {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-20%);
+  transition: transform 0.4s ease, visibility 0.2s ease, opacity 0.2s ease;
+}
+
+@keyframes heartBeating {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart:hover > svg {
+  animation: heartBeating 0.6s linear infinite;
 }
