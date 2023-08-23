@@ -12,14 +12,11 @@ export async function generateStaticParams() {
     "cakes",
   ];
 
-  const url =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/api/products"
-      : "https://lalschocolates.vercel.app/api/products";
+  const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
-  const { products } = await fetch(url, { next: { revalidate: 3600 } }).then(
-    (res) => res.json()
-  );
+  const { products } = await fetch(apiUrlProducts as string, {
+    next: { revalidate: 3600 },
+  }).then((res) => res.json());
 
   let productsByCategory: { category: Category; reference: string }[] = [];
 
@@ -115,12 +112,9 @@ const fetchPoundRate = async () => {
 
 const fetchProducts = async () => {
   try {
-    const url =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/products"
-        : "https://lalschocolates.vercel.app/api/products";
+    const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
-    const res = await fetch(url, {
+    const res = await fetch(apiUrlProducts as string, {
       next: { revalidate: 3600 },
     });
 

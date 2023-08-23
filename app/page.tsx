@@ -12,12 +12,9 @@ export const metadata: Metadata = {
 
 const fetchProducts = async () => {
   try {
-    const url =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/products"
-        : "https://lalschocolates.vercel.app/api/products";
+    const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
-    const res = await fetch(url, {
+    const res = await fetch(apiUrlProducts as string, {
       next: { revalidate: 3600 },
     });
 

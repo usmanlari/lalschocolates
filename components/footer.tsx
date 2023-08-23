@@ -23,12 +23,9 @@ export default function Footer() {
     }
 
     try {
-      const url =
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:3000/api/subscribers"
-          : "https://lalschocolates.vercel.app/api/subscribers";
+      const apiUrlSubscribers = process.env.NEXT_PUBLIC_API_SUBSCRIBERS;
 
-      const res = await fetch(url, {
+      const res = await fetch(apiUrlSubscribers as string, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
