@@ -28,23 +28,23 @@ export default function ProductCatalog({
   dollarRate: string;
   poundRate: string;
 }) {
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
-  // const pathname = usePathname();
-  // const { currency } = useRootContext();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { currency } = useRootContext();
 
-  // const removeSearchParam = (...names: string[]) => {
-  //   const params = new URLSearchParams(searchParams);
+  const removeSearchParam = (...names: string[]) => {
+    const params = new URLSearchParams(searchParams);
 
-  //   names.forEach((name) => {
-  //     params.delete(name);
-  //   });
-  //   return params.toString();
-  // };
+    names.forEach((name) => {
+      params.delete(name);
+    });
+    return params.toString();
+  };
 
   return (
     <section className="mt-6 sm:mt-8 lg:mt-10">
-      {/* <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-row items-center justify-between">
           <Filter
             category={category}
@@ -250,7 +250,7 @@ export default function ProductCatalog({
             })}
           </div>
         )}
-      </div> */}
+      </div>
     </section>
   );
 }

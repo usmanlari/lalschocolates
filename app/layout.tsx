@@ -12,90 +12,90 @@ import Login from "@/components/login";
 import Footer from "@/components/footer";
 import CurrencyConverter from "@/components/currency-converter";
 
-// const fetchProducts = async () => {
-//   try {
-//     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
+const fetchProducts = async () => {
+  try {
+    const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
-//     const res = await fetch(apiUrlProducts as string, {
-//       next: { revalidate: 3600 },
-//     });
+    const res = await fetch(apiUrlProducts as string, {
+      next: { revalidate: 3600 },
+    });
 
-//     if (res.ok) {
-//       return res.json();
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+    if (res.ok) {
+      return res.json();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// const fetchDollarRate = async () => {
-//   const url =
-//     "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
-//   const options = {
-//     method: "POST",
-//     headers: {
-//       "content-type": "application/x-www-form-urlencoded",
-//       "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
-//       "X-RapidAPI-Host":
-//         "community-neutrino-currency-conversion.p.rapidapi.com",
-//     },
-//     body: new URLSearchParams({
-//       "from-value": "1",
-//       "from-type": "PKR",
-//       "to-type": "USD",
-//     }),
-//   };
+const fetchDollarRate = async () => {
+  const url =
+    "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
+      "X-RapidAPI-Host":
+        "community-neutrino-currency-conversion.p.rapidapi.com",
+    },
+    body: new URLSearchParams({
+      "from-value": "1",
+      "from-type": "PKR",
+      "to-type": "USD",
+    }),
+  };
 
-//   try {
-//     const res = await fetch(url, options);
-//     if (res.ok) {
-//       return res.json();
-//     }
-//     return { result: "0.0034" };
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+  try {
+    const res = await fetch(url, options);
+    if (res.ok) {
+      return res.json();
+    }
+    return { result: "0.0034" };
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-// const fetchPoundRate = async () => {
-//   const url =
-//     "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
-//   const options = {
-//     method: "POST",
-//     headers: {
-//       "content-type": "application/x-www-form-urlencoded",
-//       "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
-//       "X-RapidAPI-Host":
-//         "community-neutrino-currency-conversion.p.rapidapi.com",
-//     },
-//     body: new URLSearchParams({
-//       "from-value": "1",
-//       "from-type": "PKR",
-//       "to-type": "GBP",
-//     }),
-//   };
+const fetchPoundRate = async () => {
+  const url =
+    "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
+      "X-RapidAPI-Host":
+        "community-neutrino-currency-conversion.p.rapidapi.com",
+    },
+    body: new URLSearchParams({
+      "from-value": "1",
+      "from-type": "PKR",
+      "to-type": "GBP",
+    }),
+  };
 
-//   try {
-//     const res = await fetch(url, options);
-//     if (res.ok) {
-//       return res.json();
-//     }
-//     return { result: "0.0027" };
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+  try {
+    const res = await fetch(url, options);
+    if (res.ok) {
+      return res.json();
+    }
+    return { result: "0.0027" };
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-// export const dynamicParams = false;
+export const dynamicParams = false;
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // const { products } = await fetchProducts();
-  // const { result: dollarRate } = await fetchDollarRate();
-  // const { result: poundRate } = await fetchPoundRate();
+  const { products } = await fetchProducts();
+  const { result: dollarRate } = await fetchDollarRate();
+  const { result: poundRate } = await fetchPoundRate();
 
   return (
     <html lang="en">
@@ -109,11 +109,11 @@ export default async function RootLayout({
         <Footer />
         <Toolbar />
         <Menu />
-        {/* <Search
+        <Search
           products={products}
           dollarRate={dollarRate}
           poundRate={poundRate}
-        /> */}
+        />
         <Login />
         <RecoverPassword />
         <Register />
