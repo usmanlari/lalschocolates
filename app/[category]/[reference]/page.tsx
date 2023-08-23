@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     "cakes",
   ];
 
-  const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
+  const apiUrlProducts = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`;
 
   const { products } = await fetch(apiUrlProducts as string, {
     next: { revalidate: 3600 },
@@ -112,7 +112,7 @@ const fetchPoundRate = async () => {
 
 const fetchProducts = async () => {
   try {
-    const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
+    const apiUrlProducts = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`;
 
     const res = await fetch(apiUrlProducts as string, {
       next: { revalidate: 3600 },

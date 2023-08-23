@@ -23,7 +23,7 @@ export default function Footer() {
     }
 
     try {
-      const apiUrlSubscribers = process.env.NEXT_PUBLIC_API_SUBSCRIBERS;
+      const apiUrlSubscribers = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/subscribers`;
 
       const res = await fetch(apiUrlSubscribers as string, {
         method: "POST",
