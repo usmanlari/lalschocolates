@@ -11,6 +11,7 @@ import Menu from "@/components/menu";
 import Login from "@/components/login";
 import Footer from "@/components/footer";
 import CurrencyConverter from "@/components/currency-converter";
+import { Analytics } from "@vercel/analytics/react";
 
 const fetchProducts = async () => {
   try {
@@ -120,6 +121,7 @@ export default async function RootLayout({
         <ShoppingCart />
         <CurrencyConverter />
       </RootContextProvider>
+      <Analytics />
     </html>
   );
 }
