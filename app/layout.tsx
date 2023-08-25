@@ -18,7 +18,7 @@ const fetchProducts = async () => {
     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
     const res = await fetch(apiUrlProducts as string, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 1 },
     });
 
     if (res.ok) {
