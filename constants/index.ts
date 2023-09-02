@@ -269,3 +269,7 @@ export const findItemCategory = (array: Category[]) => {
     }
   }
 };
+
+export const removeDuplicates = (arr: String[]) => {
+  return Array.from(new Set(arr));
+};

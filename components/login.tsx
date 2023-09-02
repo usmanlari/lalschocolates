@@ -117,15 +117,7 @@ export default function Login() {
           className="px-4 py-2.5 flex flex-row items-center justify-center gap-x-2 border-1 border-black text-black bg-white hover:text-white active:text-white hover:bg-black active:bg-black"
         >
           <FcGoogle />
-          <span className="text-sm font-semibold">Login with Google</span>
-        </button>
-        <button
-          style={{ transition: "color 0.2s ease, background 0.2s ease" }}
-          type="button"
-          className="px-4 py-2.5 flex flex-row items-center justify-center gap-x-2 border-1 border-black text-black bg-white hover:text-white active:text-white hover:bg-black active:bg-black"
-        >
-          <FaFacebook className="text-blue-600 " />
-          <span className="text-sm font-semibold">Login with Facebook</span>
+          <span className="text-sm font-semibold">Continue with Google</span>
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Category, Product } from "@/types";
 import ProductDetail from "@/components/product-detail";
 import Breadcrumbs from "@/components/breadcrumbs";
+import Extras from "@/components/extras";
 
 export async function generateStaticParams() {
   const categories: Category[] = [
@@ -14,9 +15,9 @@ export async function generateStaticParams() {
 
   const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
-  const { products } = await fetch(apiUrlProducts as string, { next: { revalidate: 3600 } }).then(
-    (res) => res.json()
-  );
+  const { products } = await fetch(apiUrlProducts as string, {
+    next: { revalidate: 900 },
+  }).then((res) => res.json());
 
   let productsByCategory: { category: Category; reference: string }[] = [];
 
@@ -115,7 +116,7 @@ const fetchProducts = async () => {
     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
     const res = await fetch(apiUrlProducts as string, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 },
     });
 
     if (res.ok) {
@@ -135,8 +136,8 @@ export default async function Product({
     reference: string;
   };
 }) {
-  const { result: dollarRate } = await fetchDollarRate();
-  const { result: poundRate } = await fetchPoundRate();
+  const { result: dollarRate = "0.0034" } = await fetchDollarRate();
+  const { result: poundRate = "0.0027" } = await fetchPoundRate();
   const { category, reference } = params;
   const { products } = await fetchProducts();
   const product = products.find(
@@ -151,6 +152,12 @@ export default async function Product({
         dollarRate={dollarRate}
         poundRate={poundRate}
         category={category}
+      />
+      <Extras
+        products={products}
+        product={product}
+        dollarRate={dollarRate}
+        poundRate={poundRate}
       />
     </main>
   );

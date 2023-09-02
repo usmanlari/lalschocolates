@@ -101,7 +101,7 @@ const fetchProducts = async () => {
     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
     const res = await fetch(apiUrlProducts as string, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 },
     });
 
     if (res.ok) {
@@ -118,8 +118,8 @@ export default async function Category({
 }: {
   params: { category: Category };
 }) {
-  const { result: dollarRate } = await fetchDollarRate();
-  const { result: poundRate } = await fetchPoundRate();
+  const { result: dollarRate = "0.0034" } = await fetchDollarRate();
+  const { result: poundRate = "0.0027" } = await fetchPoundRate();
   const { category } = params;
   const { products } = await fetchProducts();
 
@@ -131,6 +131,7 @@ export default async function Category({
           src={FreeDeliveryBanner}
           alt=""
           priority
+          placeholder="blur"
         />
       ) : category === "chocolates" || category === "chocolate-bars" ? (
         <Image
@@ -138,9 +139,16 @@ export default async function Category({
           src={ChocolateBarsBanner}
           alt=""
           priority
+          placeholder="blur"
         />
       ) : (
-        <Image className="w-full h-auto" src={Banner} alt="" priority />
+        <Image
+          className="w-full h-auto"
+          src={Banner}
+          alt=""
+          priority
+          placeholder="blur"
+        />
       )}
       {category === "free-delivery" ? (
         <Navigation />

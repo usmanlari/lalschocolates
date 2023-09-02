@@ -15,7 +15,7 @@ const fetchProducts = async () => {
     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
     const res = await fetch(apiUrlProducts as string, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 },
     });
 
     if (res.ok) {
@@ -86,8 +86,8 @@ const fetchPoundRate = async () => {
 
 export default async function Home() {
   const { products } = await fetchProducts();
-  const { result: dollarRate } = await fetchDollarRate();
-  const { result: poundRate } = await fetchPoundRate();
+  const { result: dollarRate = "0.0034" } = await fetchDollarRate();
+  const { result: poundRate = "0.0027" } = await fetchPoundRate();
 
   return (
     <main>
@@ -96,6 +96,7 @@ export default async function Home() {
         src={ChocolateBarsBanner}
         alt=""
         priority
+        placeholder="blur"
       />
       <Navigation />
       <ProductCatalog

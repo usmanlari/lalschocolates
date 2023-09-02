@@ -34,7 +34,6 @@ export default function SortBy() {
         <button
           type="button"
           onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
-          onBlur={() => setIsSortDropdownOpen(false)}
           style={{ transition: "color 0.2s ease" }}
           className="h-10 flex flex-row w-full justify-between items-center border-1 border-gray-200 text-gray-500 hover:text-yellow-custom active:text-yellow-custom rounded-3xl px-3.5"
         >

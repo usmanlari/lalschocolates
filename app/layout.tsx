@@ -18,7 +18,7 @@ const fetchProducts = async () => {
     const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
 
     const res = await fetch(apiUrlProducts as string, {
-      next: { revalidate: 1 },
+      next: { revalidate: 900 },
     });
 
     if (res.ok) {
@@ -95,8 +95,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const { products } = await fetchProducts();
-  const { result: dollarRate } = await fetchDollarRate();
-  const { result: poundRate } = await fetchPoundRate();
+  const { result: dollarRate = "0.0034" } = await fetchDollarRate();
+  const { result: poundRate = "0.0027" } = await fetchPoundRate();
 
   return (
     <html lang="en">
@@ -118,7 +118,11 @@ export default async function RootLayout({
         <Login />
         <RecoverPassword />
         <Register />
-        <ShoppingCart />
+        <ShoppingCart
+          products={products}
+          dollarRate={dollarRate}
+          poundRate={poundRate}
+        />
         <CurrencyConverter />
       </RootContextProvider>
       <Analytics />

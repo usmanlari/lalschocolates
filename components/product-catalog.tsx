@@ -16,6 +16,8 @@ import SortBy from "./sort-by";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 
 export default function ProductCatalog({
   products,
@@ -31,7 +33,8 @@ export default function ProductCatalog({
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { currency } = useRootContext();
+  const { currency, setIsCartOpen, wishlist, setWishlist, cart, setCart } =
+    useRootContext();
 
   const removeSearchParam = (...names: string[]) => {
     const params = new URLSearchParams(searchParams);
@@ -208,8 +211,44 @@ export default function ProductCatalog({
                           ]
                         }
                         alt=""
+                        placeholder="blur"
                       />
                     </Link>
+                    <div className="absolute flex flex-row items-center top-2 sm:top-4 left-2 cursor-pointer">
+                      {wishlist.includes(product.reference) ? (
+                        <>
+                          <button
+                            className="heart p-2"
+                            onClick={() => router.push("/wishlist")}
+                          >
+                            <FaHeart className="text-rose-600 text-lg sm:text-xl" />
+                          </button>
+                          <div className="relative -top-px hidden lg:flex flex-row justify-center items-center">
+                            <div className="border-6 border-y-transparent border-l-transparent border-black w-0 h-0"></div>
+                            <span className="py-1 px-3 bg-black text-white text-xs font-bold">
+                              Browse Wishlist
+                            </span>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <button
+                            className="heart p-2"
+                            onClick={() =>
+                              setWishlist([...wishlist, product.reference])
+                            }
+                          >
+                            <FiHeart className="text-lg sm:text-xl" />
+                          </button>
+                          <div className="relative -top-px hidden lg:flex flex-row justify-center items-center">
+                            <div className="border-6 border-y-transparent border-l-transparent border-black w-0 h-0"></div>
+                            <span className="py-1 px-3 bg-black text-white text-xs font-bold">
+                              Add to Wishlist
+                            </span>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
                   <Link
                     href={`/${findItemCategory(product.categories)}/${
@@ -241,6 +280,10 @@ export default function ProductCatalog({
                         transition: "color 0.2s ease, border 0.2s ease",
                       }}
                       className="text-xs font-medium border-black border-1 py-1.5 px-6 hover:text-yellow-custom hover:border-yellow-custom active:text-yellow-custom active:border-yellow-custom"
+                      onClick={() => {
+                        setCart([...cart, product.reference]);
+                        setIsCartOpen(true);
+                      }}
                     >
                       ADD TO CART
                     </button>

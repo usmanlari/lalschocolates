@@ -7,8 +7,14 @@ import { useRootContext } from "@/context/root-context";
 import Link from "next/link";
 
 export default function Toolbar() {
-  const { setIsMenuOpen, setIsSearchOpen, setIsCartOpen, setIsAccountOpen } =
-    useRootContext();
+  const {
+    setIsMenuOpen,
+    setIsSearchOpen,
+    setIsCartOpen,
+    setIsAccountOpen,
+    wishlist,
+    cart,
+  } = useRootContext();
 
   return (
     <div className="fixed z-30 -bottom-px w-full left-0 bg-green-custom block lg:hidden flex flex-row flex-nowrap items-center justify-evenly">
@@ -36,7 +42,7 @@ export default function Toolbar() {
       >
         <FiHeart className="text-xl sm:text-2xl" />
         <div className="flex flex-row justify-center items-center absolute top-1.25 right-4.5 bg-yellow-custom h-3.5 w-3.5 shadow-lg rounded-full text-2xs text-white">
-          <span>0</span>
+          <span>{wishlist.length}</span>
         </div>
         <span className="text-xs font-medium">Wishlist</span>
       </Link>
@@ -48,7 +54,7 @@ export default function Toolbar() {
       >
         <AiOutlineShoppingCart className="text-xl sm:text-2xl" />
         <div className="flex flex-row justify-center items-center absolute top-1.25 right-1.5 bg-yellow-custom h-3.5 w-3.5 shadow-lg rounded-full text-2xs text-white">
-          <span>0</span>
+          <span>{cart.length}</span>
         </div>
         <span className="text-xs font-medium">Cart</span>
       </button>

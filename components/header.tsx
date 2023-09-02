@@ -11,8 +11,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-  const { setIsMenuOpen, setIsSearchOpen, setIsAccountOpen, setIsCartOpen } =
-    useRootContext();
+  const {
+    setIsMenuOpen,
+    setIsSearchOpen,
+    setIsAccountOpen,
+    setIsCartOpen,
+    wishlist,
+    cart,
+  } = useRootContext();
 
   return (
     <header className="bg-white sticky -top-px shadow-sm z-20">
@@ -66,7 +72,7 @@ export default function Header() {
               className="flex flex-row justify-center items-center absolute top-0.5 sm:top-1 right-0 sm:right-px bg-yellow-custom h-3.5 w-3.5
             shadow-lg rounded-full text-2xs text-white"
             >
-              <span>0</span>
+              <span>{wishlist.length}</span>
             </div>
           </Link>
           <button
@@ -79,7 +85,7 @@ export default function Header() {
               className="flex flex-row justify-center items-center absolute top-0.5 sm:top-1 -right-1 bg-yellow-custom h-3.5 w-3.5
             shadow-lg rounded-full text-2xs text-white"
             >
-              <span>0</span>
+              <span>{cart.length}</span>
             </div>
           </button>
         </div>

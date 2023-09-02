@@ -1,35 +1,99 @@
 import type { Metadata } from "next";
-import { FiHeart } from "react-icons/fi";
-import Link from "next/link";
+import WishlistCatalog from "@/components/wishlist-catalog";
 
 export const metadata: Metadata = {
   title: "My Wishlist Page - Lals - Chocolate and Gifting Brand in Pakistan",
 };
 
-export default function Wishlist() {
+const fetchProducts = async () => {
+  try {
+    const apiUrlProducts = process.env.NEXT_PUBLIC_API_PRODUCTS;
+
+    const res = await fetch(apiUrlProducts as string, {
+      next: { revalidate: 900 },
+    });
+
+    if (res.ok) {
+      return res.json();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const fetchDollarRate = async () => {
+  const url =
+    "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
+      "X-RapidAPI-Host":
+        "community-neutrino-currency-conversion.p.rapidapi.com",
+    },
+    body: new URLSearchParams({
+      "from-value": "1",
+      "from-type": "PKR",
+      "to-type": "USD",
+    }),
+  };
+
+  try {
+    const res = await fetch(url, options);
+    if (res.ok) {
+      return res.json();
+    }
+    return { result: "0.0034" };
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const fetchPoundRate = async () => {
+  const url =
+    "https://community-neutrino-currency-conversion.p.rapidapi.com/convert";
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "98d07bd56bmsh0173f455518c460p124447jsn105454016d52",
+      "X-RapidAPI-Host":
+        "community-neutrino-currency-conversion.p.rapidapi.com",
+    },
+    body: new URLSearchParams({
+      "from-value": "1",
+      "from-type": "PKR",
+      "to-type": "GBP",
+    }),
+  };
+
+  try {
+    const res = await fetch(url, options);
+    if (res.ok) {
+      return res.json();
+    }
+    return { result: "0.0027" };
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export default async function Wishlist() {
+  const { products } = await fetchProducts();
+  const { result: dollarRate = "0.0034" } = await fetchDollarRate();
+  const { result: poundRate = "0.0027" } = await fetchPoundRate();
+
   return (
     <main>
       <div className="bg-green-custom text-center py-16">
         <h3 className="px-4 text-sm">View your wishlist products</h3>
       </div>
-      <div className="px-4 mx-auto py-32 flex flex-col items-center gap-y-6">
-        <FiHeart className="text-8xl" />
-        <h3 className="text-3xl font-bold text-center">WISHLIST IS EMPTY</h3>
-        <div>
-          <p className="text-sm text-center">
-            You don't have any products in the wishlist yet.
-          </p>
-          <p className="text-sm text-center">
-            You will find a lot of interesting products on our "Shop" page.
-          </p>
-        </div>
-        <Link
-          className="font-semibold text-sm text-white bg-black py-2.5 px-4"
-          href="/"
-        >
-          RETURN TO SHOP
-        </Link>
-      </div>
+      <WishlistCatalog
+        products={products}
+        dollarRate={dollarRate}
+        poundRate={poundRate}
+      />
     </main>
   );
 }

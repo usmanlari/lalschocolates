@@ -149,6 +149,19 @@ select {
   text-align: center;
 }
 
+.cart-title {
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.cart-shadow {
+  box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.15);
+}
+
 .social-link > svg {
   transform: translateY(0);
   transition: transform 0.2s ease;
@@ -186,4 +199,19 @@ select {
 
 .heart:hover > svg {
   animation: heartBeating 0.6s linear infinite;
+}
+
+.heart ~ div,
+.trash ~ div {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(2%);
+  transition: transform 0.4s ease, visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.heart:hover ~ div,
+.trash:hover ~ div {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-6%);
 }

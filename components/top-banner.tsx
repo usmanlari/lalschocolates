@@ -26,7 +26,7 @@ export default function TopBanner() {
           <div className="animate-container h-full lg:max-w-md flex flex-row justify-center">
             <Link
               className="hover-link text-black hover:text-yellow-custom active:text-yellow-custom text-xs whitespace-nowrap flex flex-row items-center justify-center h-full"
-              href="/products"
+              href="/"
             >
               You can place your order now. Deliveries will start from 4th
               August 2023.

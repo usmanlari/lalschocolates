@@ -25,7 +25,14 @@ export default function Search({
   dollarRate: string;
   poundRate: string;
 }) {
-  const { currency, isSearchOpen, setIsSearchOpen } = useRootContext();
+  const {
+    currency,
+    isSearchOpen,
+    setIsSearchOpen,
+    setIsCartOpen,
+    cart,
+    setCart,
+  } = useRootContext();
   const [input, setInput] = useState("");
   const [selectedOption, setSelectedOption] = useState<Category>("all");
 
@@ -109,6 +116,7 @@ export default function Search({
                       ]
                     }
                     alt=""
+                    placeholder="blur"
                   />
                 </div>
               </Link>
@@ -134,6 +142,11 @@ export default function Search({
                   style={{ transition: "color 0.2s ease, border 0.2s ease" }}
                   className="mt-1.5 text-xs font-medium border-black border-1 py-1 px-6 hover:text-yellow-custom hover:border-yellow-custom
                   active:text-yellow-custom active:border-yellow-custom"
+                  onClick={() => {
+                    setCart([...cart, product.reference]);
+                    setIsSearchOpen(false);
+                    setIsCartOpen(true);
+                  }}
                 >
                   ADD TO CART
                 </button>

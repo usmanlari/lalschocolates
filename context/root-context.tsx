@@ -22,6 +22,8 @@ const RootContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [isRecoverPasswordOpen, setIsRecoverPasswordOpen] =
     useState<boolean>(false);
   const [isSortByOpen, setIsSortByOpen] = useState<boolean>(false);
+  const [wishlist, setWishlist] = useState<String[]>([]);
+  const [cart, setCart] = useState<String[]>([]);
 
   return (
     <RootContext.Provider
@@ -48,6 +50,10 @@ const RootContextProvider = ({ children }: { children: React.ReactNode }) => {
         setIsRecoverPasswordOpen,
         isSortByOpen,
         setIsSortByOpen,
+        wishlist,
+        setWishlist,
+        cart,
+        setCart,
       }}
     >
       <body

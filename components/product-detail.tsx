@@ -3,9 +3,11 @@
 import { Category, Product } from "@/types";
 import { imageMapping, libre_caslon_text } from "@/constants";
 import { FiMinus, FiPlus, FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
 import { useRootContext } from "@/context/root-context";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ProductDetail({
   product,
@@ -18,11 +20,14 @@ export default function ProductDetail({
   dollarRate: string;
   poundRate: string;
 }) {
-  const { currency } = useRootContext();
+  const router = useRouter();
+  const { currency, wishlist, setWishlist, setIsCartOpen, cart, setCart } =
+    useRootContext();
   const [isGreetingCardDropdownOpen, setIsGreetingCardDropdownOpen] =
     useState<boolean>(false);
   const [isDisclaimerDropdownOpen, setIsDisclaimerDropdownOpen] =
     useState<boolean>(false);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 sm:mt-12 lg:mt-14">
@@ -30,6 +35,7 @@ export default function ProductDetail({
         <Image
           src={imageMapping[product.reference as keyof typeof imageMapping]}
           alt=""
+          placeholder="blur"
         />
       </div>
       <div className="flex-1">
@@ -45,26 +51,67 @@ export default function ProductDetail({
             `£ ${(product.price * Number(poundRate)).toFixed(2)} GBP`}
         </p>
         <p className="mt-3 text-sm leading-6">{product.description}</p>
+        <p className="mt-3 text-sm font-semibold">
+          {category === "cakes" &&
+            "Cakes are only available for delivery in Karachi."}
+        </p>
+        <p className="mt-3 text-sm font-semibold text-green-600">
+          {product.categories.includes("free-delivery") &&
+            "This product is applicable for FREE DELIVERY in Karachi & Lahore"}
+        </p>
         <div className="mt-8 flex flex-row items-center gap-x-2">
           <div className="h-11 flex flex-row border-1 border-black">
-            <button className="px-3.5 py-2">
+            <button
+              className="px-3.5 py-2"
+              onClick={() => {
+                return quantity > 1 ? setQuantity(quantity - 1) : null;
+              }}
+            >
               <FiMinus />
             </button>
             <div className="px-3.5 py-2">
-              <span className="font-semibold">1</span>
+              <span className="font-semibold">{quantity}</span>
             </div>
-            <button className="px-3.5 py-2">
+            <button
+              className="px-3.5 py-2"
+              onClick={() => setQuantity(quantity + 1)}
+            >
               <FiPlus />
             </button>
           </div>
-          <button className="h-11 px-5 py-2 text-white bg-black text-sm font-semibold">
+          <button
+            className="h-11 px-5 py-2 text-white bg-black text-sm font-semibold"
+            onClick={() => {
+              const newItems = [];
+              for (let i = 0; i < quantity; i++) {
+                newItems.push(product.reference);
+              }
+              setCart([...cart, ...newItems]);
+              setIsCartOpen(true);
+            }}
+          >
             ADD TO CART
           </button>
         </div>
-        <button className="heart mt-8 flex flex-row items-center gap-x-1">
-          <FiHeart className="text-sm stroke-2" />
-          <span className="text-sm font-semibold">Add to Wishlist</span>
-        </button>
+        <div className="mt-8">
+          {wishlist.includes(product.reference) ? (
+            <button
+              onClick={() => router.push("/wishlist")}
+              className="heart flex flex-row items-center gap-x-1"
+            >
+              <FaHeart className="text-rose-600 text-sm stroke-2" />
+              <span className="text-sm font-semibold">Browse Wishlist</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => setWishlist([...wishlist, product.reference])}
+              className="heart flex flex-row items-center gap-x-1"
+            >
+              <FiHeart className="text-sm stroke-2" />
+              <span className="text-sm font-semibold">Add to Wishlist</span>
+            </button>
+          )}
+        </div>
         <div className="mt-8">
           <button
             onClick={() =>
@@ -76,7 +123,7 @@ export default function ProductDetail({
             {isGreetingCardDropdownOpen ? <FiMinus /> : <FiPlus />}
           </button>
           <div
-            className={`text-sm py-1.5 px-5 leading-6 overflow-hidden ${
+            className={`text-sm py-1 px-5 leading-6 overflow-hidden ${
               isGreetingCardDropdownOpen ? "h-fit" : "h-0"
             }`}
           >
