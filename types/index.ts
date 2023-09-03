@@ -7,6 +7,16 @@ export interface Product {
   reference: string;
 }
 
+export interface User {
+  _id: string;
+  name: string;
+  email: string;
+  address: string;
+  password: string;
+  city: string;
+  phoneNumber: string;
+}
+
 export type Currency = "British Pound" | "Rupees" | "US Dollar";
 
 export type Category =

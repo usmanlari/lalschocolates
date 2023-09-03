@@ -12,6 +12,7 @@ import Login from "@/components/login";
 import Footer from "@/components/footer";
 import CurrencyConverter from "@/components/currency-converter";
 import { Analytics } from "@vercel/analytics/react";
+import NextAuthProvider from "./Providers";
 
 const fetchProducts = async () => {
   try {
@@ -103,28 +104,30 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
-      <RootContextProvider>
-        <TopBanner />
-        <Header />
-        {children}
-        <Footer />
-        <Toolbar />
-        <Menu />
-        <Search
-          products={products}
-          dollarRate={dollarRate}
-          poundRate={poundRate}
-        />
-        <Login />
-        <RecoverPassword />
-        <Register />
-        <ShoppingCart
-          products={products}
-          dollarRate={dollarRate}
-          poundRate={poundRate}
-        />
-        <CurrencyConverter />
-      </RootContextProvider>
+      <NextAuthProvider>
+        <RootContextProvider>
+          <TopBanner />
+          <Header />
+          {children}
+          <Footer />
+          <Toolbar />
+          <Menu />
+          <Search
+            products={products}
+            dollarRate={dollarRate}
+            poundRate={poundRate}
+          />
+          <Login />
+          <RecoverPassword />
+          <Register />
+          <ShoppingCart
+            products={products}
+            dollarRate={dollarRate}
+            poundRate={poundRate}
+          />
+          <CurrencyConverter />
+        </RootContextProvider>
+      </NextAuthProvider>
       <Analytics />
     </html>
   );

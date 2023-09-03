@@ -3,8 +3,8 @@
 import { libre_caslon_text } from "@/constants";
 import { TfiClose } from "react-icons/tfi";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
 import { useRootContext } from "@/context/root-context";
+import { signIn } from "next-auth/react";
 
 export default function Login() {
   const {
@@ -115,6 +115,7 @@ export default function Login() {
           style={{ transition: "color 0.2s ease, background 0.2s ease" }}
           type="button"
           className="px-4 py-2.5 flex flex-row items-center justify-center gap-x-2 border-1 border-black text-black bg-white hover:text-white active:text-white hover:bg-black active:bg-black"
+          onClick={() => signIn("google")}
         >
           <FcGoogle />
           <span className="text-sm font-semibold">Continue with Google</span>

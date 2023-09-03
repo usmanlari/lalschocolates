@@ -9,6 +9,8 @@ import logo from "@/app/images/logo.png";
 import Navbar from "./navbar";
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const {
@@ -19,6 +21,8 @@ export default function Header() {
     wishlist,
     cart,
   } = useRootContext();
+  const router = useRouter();
+  const { status } = useSession();
 
   return (
     <header className="bg-white sticky -top-px shadow-sm z-20">
@@ -62,7 +66,10 @@ export default function Header() {
           <button
             type="button"
             className="p-1.5 sm:p-2 hidden sm:block"
-            onClick={() => setIsAccountOpen(true)}
+            onClick={() => {
+              status === "authenticated" && router.push("/account");
+              status === "unauthenticated" && setIsAccountOpen(true);
+            }}
           >
             <VscAccount className="text-lg sm:text-xl" />
           </button>
