@@ -110,14 +110,14 @@ export default function ShoppingCart({
                         >
                           <FiMinus />
                         </button>
-                        <div className="px-2.5 py-1">
-                          <span className="font-semibold">
+                        <div className="px-1.5 w-8 py-1">
+                          <p className="font-semibold text-center">
                             {
                               cart.filter(
                                 (item: string) => item === product.reference
                               ).length
                             }
-                          </span>
+                          </p>
                         </div>
                         <button
                           className="px-2.5 py-1"

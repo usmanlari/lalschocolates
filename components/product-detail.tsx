@@ -69,8 +69,8 @@ export default function ProductDetail({
             >
               <FiMinus />
             </button>
-            <div className="px-3.5 py-2">
-              <span className="font-semibold">{quantity}</span>
+            <div className="px-2.5 w-8 py-2">
+              <p className="font-semibold text-center">{quantity}</p>
             </div>
             <button
               className="px-3.5 py-2"
