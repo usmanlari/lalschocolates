@@ -23,9 +23,7 @@ export default function Footer() {
     }
 
     try {
-      const apiUrlSubscribers = process.env.NEXT_PUBLIC_API_SUBSCRIBERS;
-
-      const res = await fetch(apiUrlSubscribers as string, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/subscribers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

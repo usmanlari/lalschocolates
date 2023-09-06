@@ -24,9 +24,9 @@ export default function ProductDetail({
   const { currency, wishlist, setWishlist, setIsCartOpen, cart, setCart } =
     useRootContext();
   const [isGreetingCardDropdownOpen, setIsGreetingCardDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
   const [isDisclaimerDropdownOpen, setIsDisclaimerDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
   const [quantity, setQuantity] = useState(1);
 
   return (

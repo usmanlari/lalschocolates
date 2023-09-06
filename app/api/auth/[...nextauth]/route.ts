@@ -17,10 +17,9 @@ const authOptions = {
         try {
           await connectMongoDB();
           const userExists = await User.findOne({ email });
-          const apiUrlUsers = process.env.NEXT_PUBLIC_API_USERS;
 
           if (!userExists) {
-            const res = await fetch(apiUrlUsers as string, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

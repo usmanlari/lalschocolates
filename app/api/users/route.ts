@@ -2,7 +2,7 @@ import connectMongoDB from "@/lib/mongodb";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
 
-export const revalidate = 1;
+export const revalidate = 0;
 
 export async function POST(request: Request) {
   const { name, email, password = null } = await request.json();
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 export async function GET() {
   await connectMongoDB();
   const users = await User.find();
-  return NextResponse.json({ users });
+  return NextResponse.json({ users }, { status: 200 });
 }
 
 export async function PUT(request: Request) {

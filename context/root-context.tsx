@@ -10,18 +10,18 @@ const useRootContext = () => useContext(RootContext);
 
 const RootContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [currency, setCurrency] = useState<Currency>("Rupees");
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [isAccountOpen, setIsAccountOpen] = useState<boolean>(false);
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCurrencyConverterOpen, setIsCurrencyConverterOpen] =
-    useState<boolean>(false);
-  const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
-  const [isLoginOpen, setIsLoginOpen] = useState<boolean>(true);
-  const [isRegisterOpen, setIsRegisterOpen] = useState<boolean>(false);
+    useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(true);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isRecoverPasswordOpen, setIsRecoverPasswordOpen] =
-    useState<boolean>(false);
-  const [isSortByOpen, setIsSortByOpen] = useState<boolean>(false);
+    useState(false);
+  const [isSortByOpen, setIsSortByOpen] = useState(false);
   const [wishlist, setWishlist] = useState<String[]>([]);
   const [cart, setCart] = useState<String[]>([]);
 

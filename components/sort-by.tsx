@@ -13,7 +13,7 @@ export default function SortBy() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { isSortByOpen, setIsSortByOpen } = useRootContext();
-  const [isSortDropdownOpen, setIsSortDropdownOpen] = useState<boolean>(false);
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
   const [sort, setSort] = useState<Sort>(
     (searchParams.get("sort") as Sort) || "price-asc"
   );

@@ -7,9 +7,8 @@ export const metadata: Metadata = {
 
 const fetchUsers = async () => {
   try {
-    const apiUrlUsers = process.env.NEXT_PUBLIC_API_USERS;
-    const res = await fetch(apiUrlUsers as string, {
-      next: { revalidate: 1 },
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users`, {
+      cache: "no-store",
     });
 
     if (res.ok) {

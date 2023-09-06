@@ -12,9 +12,9 @@ import Link from "next/link";
 export default function Menu() {
   const { isMenuOpen, setIsMenuOpen } = useRootContext();
   const [isMenuChocolatesDropdownOpen, setIsMenuChocolatesDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
   const [isMenuPatisserieDropdownOpen, setIsMenuPatisserieDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
 
   return (
     <div

@@ -11,9 +11,9 @@ import Image from "next/image";
 export default function Navbar() {
   const isActive = usePathname().split("/")[1];
   const [isChocolatesDropdownOpen, setIsChocolatesDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
   const [isPatisserieDropdownOpen, setIsPatisserieDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
 
   return (
     <nav className="max-w-7xl mx-auto px-4 hidden lg:block border-gray-200 border-t-1">
@@ -38,10 +38,9 @@ export default function Navbar() {
           onMouseEnter={() => setIsChocolatesDropdownOpen(true)}
           onMouseLeave={() => setIsChocolatesDropdownOpen(false)}
         >
-          <Link
-            href="/chocolates"
+          <p
             style={{ transition: "color 0.2s ease" }}
-            className={`h-full p-4 text-base text-black flex flex-row items-center gap-x-1.5 ${
+            className={`h-full p-4 text-base text-black flex flex-row items-center gap-x-1.5 cursor-default ${
               isActive === "chocolates" ||
               isActive === "chocolate-bars" ||
               isActive === "chocolate-barks" ||
@@ -53,7 +52,7 @@ export default function Navbar() {
           >
             <span>CHOCOLATES</span>
             <VscChevronDown />
-          </Link>
+          </p>
           <div className="w-200 h-72 shadow-lg absolute bg-green-custom left-60 p-6 flex flex-row gap-x-6 text-sm">
             <div className="flex-1">
               <ul>
@@ -149,10 +148,9 @@ export default function Navbar() {
           onMouseEnter={() => setIsPatisserieDropdownOpen(true)}
           onMouseLeave={() => setIsPatisserieDropdownOpen(false)}
         >
-          <Link
-            href="/patisserie"
+          <p
             style={{ transition: "color 0.2s ease" }}
-            className={`h-full p-4 text-base text-black flex flex-row items-center gap-x-1.5 ${
+            className={`h-full p-4 text-base text-black flex flex-row items-center gap-x-1.5 cursor-default ${
               isActive === "patisserie" ||
               isActive === "macarons" ||
               isActive === "snackables" ||
@@ -164,7 +162,7 @@ export default function Navbar() {
           >
             <span>PATISSERIE</span>
             <VscChevronDown />
-          </Link>
+          </p>
           <div className="w-200 h-72 shadow-lg absolute bg-green-custom left-60 p-6 flex flex-row gap-x-6 text-sm">
             <div className="flex-1">
               <ul>

@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function TopBanner() {
   const { currency, setCurrency } = useRootContext();
   const [isCurrencyDropdownOpen, setIsCurrencyDropdownOpen] =
-    useState<boolean>(false);
+    useState(false);
 
   return (
     <section className={`lg:h-12 bg-green-custom`}>

@@ -36,28 +36,15 @@ export default function Register() {
       </header>
       <form className="p-4 flex flex-col gap-y-4">
         <div className="flex flex-col">
-          <label htmlFor="firstname" className="required text-sm text-gray-500">
-            First Name
+          <label htmlFor="name" className="required text-sm text-gray-500">
+            Name
           </label>
           <input
             style={{ transition: "border 0.2s ease" }}
             className="mt-1.5 p-2.5 flex-1 text-sm text-gray-500 border-1 border-gray-300 focus:outline-0 focus:border-black"
             type="text"
-            name="firstname"
-            id="firstname"
-            required
-          />
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="lastname" className="required text-sm text-gray-500">
-            Last Name
-          </label>
-          <input
-            style={{ transition: "border 0.2s ease" }}
-            className="mt-1.5 p-2.5 flex-1 text-sm text-gray-500 border-1 border-gray-300 focus:outline-0 focus:border-black"
-            type="text"
-            name="lastname"
-            id="lastname"
+            name="name"
+            id="name"
             required
           />
         </div>

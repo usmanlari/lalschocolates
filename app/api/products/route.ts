@@ -6,5 +6,5 @@ export const revalidate = 900;
 export async function GET() {
   await connectMongoDB();
   const products = await Product.find();
-  return NextResponse.json({ products });
+  return NextResponse.json({ products }, { status: 200 });
 }
