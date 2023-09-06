@@ -8,28 +8,54 @@ import { useState, useEffect } from "react";
 
 export default function AccountDashboard({ users }: { users: User[] }) {
   const { data: session, status } = useSession();
-  const user =
+  const [user, setUser] = useState(
     status === "authenticated"
       ? (users.find((user) => user.email === session?.user?.email) as User)
-      : undefined;
+      : undefined
+  );
 
   const [name, setName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);
   const [address, setAddress] = useState(user?.address);
   const [city, setCity] = useState(user?.city);
   const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   useEffect(() => {
-    const user =
-      status === "authenticated"
-        ? (users.find((user) => {
-            return user.email === session?.user?.email;
-          }) as User)
-        : undefined;
+    setIsButtonDisabled(
+      name === user?.name &&
+        address === user?.address &&
+        city === user?.city &&
+        phoneNumber === user?.phoneNumber
+    );
+  }, [name, address, city, phoneNumber]);
 
-    setName(user?.name);
-    setEmail(user?.email);
-  }, [session]);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const apiUrlUsers = process.env.NEXT_PUBLIC_API_USERS;
+
+    fetch(apiUrlUsers as string, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, address, city, phoneNumber }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const { user } = data;
+        setUser(user);
+        setIsButtonDisabled(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <main>
@@ -67,7 +93,10 @@ export default function AccountDashboard({ users }: { users: User[] }) {
                 </li>
               </ul>
             </div>
-            <form className="flex flex-col flex-1 gap-y-4">
+            <form
+              className="flex flex-col flex-1 gap-y-4"
+              onSubmit={handleSubmit}
+            >
               <div className="flex flex-col">
                 <label htmlFor="account-name" className="text-sm text-gray-500">
                   Name
@@ -79,6 +108,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
                   name="name"
                   value={name || ""}
                   id="account-name"
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="flex flex-col">
@@ -112,6 +142,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
                   name="address"
                   value={address || ""}
                   id="account-address"
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
               <div className="flex flex-col">
@@ -125,6 +156,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
                   name="city"
                   value={city || ""}
                   id="account-city"
+                  onChange={(e) => setCity(e.target.value)}
                 />
               </div>
               <div className="flex flex-col">
@@ -141,21 +173,21 @@ export default function AccountDashboard({ users }: { users: User[] }) {
                   name="phoneNumber"
                   value={phoneNumber || ""}
                   id="account-phone-number"
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </div>
               <div className="w-full">
                 <button
                   type="submit"
-                  className="w-full font-semibold text-sm mt-1.5 text-white bg-black p-2.5"
+                  className="w-full font-semibold text-sm mt-1.5 text-white bg-black p-2.5 disabled:bg-gray-300"
+                  disabled={isButtonDisabled}
                 >
                   SAVE CHANGES
                 </button>
               </div>
             </form>
           </>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </div>
     </main>
   );

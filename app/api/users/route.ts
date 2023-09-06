@@ -11,11 +11,26 @@ export async function POST(request: Request) {
   const phoneNumber = "";
   await connectMongoDB();
   await User.create({ name, email, password, address, city, phoneNumber });
-  return NextResponse.json({ status: 201 });
+  return;
 }
 
 export async function GET() {
   await connectMongoDB();
   const users = await User.find();
   return NextResponse.json({ users });
+}
+
+export async function PUT(request: Request) {
+  const { name, email, address, city, phoneNumber } = await request.json();
+  await connectMongoDB();
+  const user = await User.findOne({ email });
+
+  user.name = name;
+  user.address = address;
+  user.city = city;
+  user.phoneNumber = phoneNumber;
+
+  await user.save();
+
+  return NextResponse.json({ user }, { status: 200 });
 }

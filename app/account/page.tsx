@@ -16,7 +16,7 @@ const fetchUsers = async () => {
       return res.json();
     }
   } catch (error) {
-    console.log("This is ERROR 1", error);
+    console.log(error);
     return [];
   }
 };
