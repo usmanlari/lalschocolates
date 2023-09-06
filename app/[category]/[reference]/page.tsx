@@ -13,9 +13,12 @@ export async function generateStaticParams() {
     "cakes",
   ];
 
-  const { products } = await fetch(`${process.env.NEXT_PUBLIC_API}/products`, {
-    next: { revalidate: 900 },
-  }).then((res) => res.json());
+  const { products } = await fetch(
+    process.env.NEXT_PUBLIC_API_PRODUCTS as string,
+    {
+      next: { revalidate: 900 },
+    }
+  ).then((res) => res.json());
 
   let productsByCategory: { category: Category; reference: string }[] = [];
 
@@ -111,7 +114,7 @@ const fetchPoundRate = async () => {
 
 const fetchProducts = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/products`, {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_PRODUCTS as string, {
       next: { revalidate: 900 },
     });
 

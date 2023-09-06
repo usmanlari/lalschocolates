@@ -16,12 +16,9 @@ import NextAuthProvider from "./Providers";
 
 const fetchProducts = async () => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API}/products`,
-      {
-        next: { revalidate: 900 },
-      }
-    );
+    const res = await fetch(process.env.NEXT_PUBLIC_API_PRODUCTS as string, {
+      next: { revalidate: 900 },
+    });
 
     if (res.ok) {
       return res.json();

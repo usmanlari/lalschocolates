@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const fetchProducts = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/products`, {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_PRODUCTS as string, {
       next: { revalidate: 900 },
     });
 

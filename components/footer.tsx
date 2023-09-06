@@ -23,13 +23,16 @@ export default function Footer() {
     }
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/subscribers`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const res = await fetch(
+        process.env.NEXT_PUBLIC_API_SUBSCRIBERS as string,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if ([201, 409, 422].includes(res.status)) {
         const { message } = await res.json();

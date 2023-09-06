@@ -41,7 +41,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    fetch(`${process.env.NEXT_PUBLIC_API}/users`, {
+    fetch(process.env.NEXT_PUBLIC_API_USERS as string, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
