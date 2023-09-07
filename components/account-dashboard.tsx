@@ -190,7 +190,11 @@ export default function AccountDashboard({ users }: { users: User[] }) {
             </div>
           </form>
         </div>
-      ) : null}
+      ) : (
+        <div className="px-4 mt-10 sm:mt-12 lg:mt-14 mx-auto md:max-w-3xl">
+          <p className="text-center">Loading...</p>
+        </div>
+      )}
     </main>
   );
 }
