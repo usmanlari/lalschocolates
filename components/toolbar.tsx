@@ -45,7 +45,7 @@ export default function Toolbar() {
         className="relative flex flex-col px-2.5 pb-1 pt-2 gap-y-1 items-center text-black hover:text-yellow-custom active:text-yellow-custom"
       >
         <FiHeart className="text-xl sm:text-2xl" />
-        <div className="flex flex-row justify-center items-center absolute top-1.25 right-4.5 bg-yellow-custom h-3.5 w-3.5 shadow-lg rounded-full text-2xs text-white">
+        <div className="flex flex-row justify-center items-center absolute top-1.25 right-4.5 sm:right-4 bg-yellow-custom h-3.5 w-3.5 shadow-lg rounded-full text-2xs text-white">
           <span>{wishlist.length}</span>
         </div>
         <span className="text-xs font-medium">Wishlist</span>

@@ -6,10 +6,9 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 
-export default function AccountDashboard({ users }: { users: User[] }) {
+export default function AccountDashboard() {
   const { data: session, status } = useSession();
   const [user, setUser] = useState<User | null>(null);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -18,7 +17,24 @@ export default function AccountDashboard({ users }: { users: User[] }) {
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   useEffect(() => {
-    setUser(users.find((user) => user.email === session?.user?.email) as User);
+    fetch(process.env.NEXT_PUBLIC_API_USERS as string)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const { users } = data;
+        setUser(
+          (users as User[]).find(
+            (user) => user.email === session?.user?.email
+          ) as User
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, [status]);
 
   useEffect(() => {
@@ -49,14 +65,15 @@ export default function AccountDashboard({ users }: { users: User[] }) {
       body: JSON.stringify({ name, email, address, city, phoneNumber }),
     })
       .then((response) => {
-        if (response.ok) {
-          return response.json();
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
       .then((data) => {
         const { user } = data;
         setUser(user);
+        console.log(user);
         setIsButtonDisabled(true);
       })
       .catch((error) => {
@@ -73,7 +90,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
           MY ACCOUNT
         </h3>
       </div>
-      {status === "authenticated" ? (
+      {user !== null ? (
         <div className="px-4 mt-10 sm:mt-12 lg:mt-14 mx-auto md:max-w-3xl flex flex-col md:flex-row gap-8">
           <div>
             <ul className="border-1 border-gray-300">
@@ -192,7 +209,7 @@ export default function AccountDashboard({ users }: { users: User[] }) {
         </div>
       ) : (
         <div className="px-4 mt-10 sm:mt-12 lg:mt-14 mx-auto md:max-w-3xl">
-          <p className="text-center">Loading...</p>
+          <p className="text-center text-sm text-gray-500">Loading...</p>
         </div>
       )}
     </main>
