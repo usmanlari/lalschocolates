@@ -5,7 +5,7 @@ import { FiMenu, FiHeart, FiUser } from "react-icons/fi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useRootContext } from "@/context/root-context";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 export default function Toolbar() {
@@ -19,6 +19,7 @@ export default function Toolbar() {
   } = useRootContext();
   const router = useRouter();
   const { status } = useSession();
+  const isCart = usePathname().split("/")[1];
 
   return (
     <div className="fixed z-30 -bottom-px w-full left-0 bg-green-custom block lg:hidden flex flex-row flex-nowrap items-center justify-evenly">
@@ -53,7 +54,9 @@ export default function Toolbar() {
       <button
         type="button"
         style={{ transition: "color 0.2s ease" }}
-        onClick={() => setIsCartOpen(true)}
+        onClick={() => {
+          isCart !== "cart" ? setIsCartOpen(true) : null;
+        }}
         className="relative flex flex-col px-2.5 pb-1 pt-2 gap-y-1 items-center text-black hover:text-yellow-custom active:text-yellow-custom"
       >
         <AiOutlineShoppingCart className="text-xl sm:text-2xl" />

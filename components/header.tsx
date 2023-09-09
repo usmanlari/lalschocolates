@@ -10,7 +10,7 @@ import Navbar from "./navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
   const {
@@ -23,6 +23,7 @@ export default function Header() {
   } = useRootContext();
   const router = useRouter();
   const { status } = useSession();
+  const isCart = usePathname().split("/")[1];
 
   return (
     <header className="bg-white sticky -top-px shadow-sm z-20">
@@ -85,7 +86,9 @@ export default function Header() {
           <button
             type="button"
             className="relative pl-1.5 sm:pl-2 py-1.5 sm:py-2"
-            onClick={() => setIsCartOpen(true)}
+            onClick={() => {
+              isCart !== "cart" ? setIsCartOpen(true) : null;
+            }}
           >
             <CgShoppingBag className="text-lg lg:text-xl" />
             <div
